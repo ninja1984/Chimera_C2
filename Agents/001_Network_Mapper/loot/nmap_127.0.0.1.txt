@@ -1,0 +1,177 @@
+# Nmap 7.98 scan initiated Sat Apr  4 16:14:34 2026 as: /usr/lib/nmap/nmap -sS -sV -Pn -T4 --version-intensity 9 --script ftp-vsftpd-backdoor -p 21,2121,80,443,7474,7687 -oN /home/dan/Chimera_Project/agents/01_Network_Mapper/loot/nmap_127.0.0.1.txt 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000037s latency).
+
+PORT     STATE  SERVICE VERSION
+21/tcp   closed ftp
+80/tcp   closed http
+443/tcp  closed https
+2121/tcp open   ftp     vsftpd 2.3.4
+7474/tcp open   neo4j?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Date: Sat, 04 Apr 2026 22:14:45 GMT
+|     Access-Control-Allow-Origin: *
+|     Content-Type: application/json
+|     Vary: Accept
+|     Content-Length: 253
+|     {"bolt_routing":"neo4j://127.0.0.1:7687","query":"http://127.0.0.1:7474/db/{databaseName}/query/v2","transaction":"http://127.0.0.1:7474/db/{databaseName}/tx","bolt_direct":"bolt://127.0.0.1:7687","neo4j_version":"2026.02.3","neo4j_edition":"community"}
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     Date: Sat, 04 Apr 2026 22:14:45 GMT
+|     Access-Control-Allow-Origin: *
+|     Content-Type: text/plain
+|     Allow: HEAD,GET,OPTIONS
+|     Content-Length: 18
+|     HEAD, GET, OPTIONS
+|   RPCCheck: 
+|     HTTP/1.1 400 Bad Request
+|     Date: Sat, 04 Apr 2026 22:14:45 GMT
+|     Cache-Control: must-revalidate,no-cache,no-store
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 388
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
+|     <title>Error 400 Illegal character OTEXT=0x80</title>
+|     </head>
+|     <body>
+|     <h2>HTTP ERROR 400 Illegal character OTEXT=0x80</h2>
+|     <table>
+|     <tr><th>URI:</th><td>/badMessage</td></tr>
+|     <tr><th>STATUS:</th><td>400</td></tr>
+|     <tr><th>MESSAGE:</th><td>Illegal character OTEXT=0x80</td></tr>
+|     </table>
+|     </body>
+|     </html>
+|   RTSPRequest: 
+|     HTTP/1.1 505 HTTP Version Not Supported
+|     Date: Sat, 04 Apr 2026 22:14:45 GMT
+|     Cache-Control: must-revalidate,no-cache,no-store
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 349
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
+|     <title>Error 505 Unknown Version</title>
+|     </head>
+|     <body>
+|     <h2>HTTP ERROR 505 Unknown Version</h2>
+|     <table>
+|     <tr><th>URI:</th><td>/badMessage</td></tr>
+|     <tr><th>STATUS:</th><td>505</td></tr>
+|     <tr><th>MESSAGE:</th><td>Unknown Version</td></tr>
+|     </table>
+|     </body>
+|_    </html>
+7687/tcp open   bolt?
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest: 
+|     HTTP/1.0 200 OK
+|     content-type: application/json
+|     access-control-allow-origin: *
+|     vary: Accept
+|     date: Sat, 04 Apr 2026 22:14:45 GMT
+|     content-length: 0
+|   LSCP: 
+|     HTTP/1.0 200 OK
+|     content-type: application/json
+|     access-control-allow-origin: *
+|     vary: Accept
+|     date: Sat, 04 Apr 2026 22:15:16 GMT
+|     content-length: 0
+|   OfficeScan: 
+|     HTTP/1.1 200 OK
+|     content-type: application/json
+|     access-control-allow-origin: *
+|     vary: Accept
+|     date: Sat, 04 Apr 2026 22:14:50 GMT
+|     content-length: 0
+|   apple-iphoto: 
+|     HTTP/1.1 200 OK
+|     content-type: application/json
+|     access-control-allow-origin: *
+|     vary: Accept
+|     date: Sat, 04 Apr 2026 22:15:01 GMT
+|     content-length: 0
+|   docker: 
+|     HTTP/1.1 200 OK
+|     content-type: application/json
+|     access-control-allow-origin: *
+|     vary: Accept
+|     date: Sat, 04 Apr 2026 22:15:16 GMT
+|     content-length: 0
+|   hazelcast-http, metasploit-msgrpc: 
+|     HTTP/1.0 200 OK
+|     content-type: application/json
+|     access-control-allow-origin: *
+|     vary: Accept
+|     date: Sat, 04 Apr 2026 22:15:11 GMT
+|_    content-length: 0
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port7474-TCP:V=7.98%I=9%D=4/4%Time=69D18D55%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,198,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sat,\x2004\x20Apr\x2020
+SF:26\x2022:14:45\x20GMT\r\nAccess-Control-Allow-Origin:\x20\*\r\nContent-
+SF:Type:\x20application/json\r\nVary:\x20Accept\r\nContent-Length:\x20253\
+SF:r\n\r\n{\"bolt_routing\":\"neo4j://127\.0\.0\.1:7687\",\"query\":\"http
+SF:://127\.0\.0\.1:7474/db/{databaseName}/query/v2\",\"transaction\":\"htt
+SF:p://127\.0\.0\.1:7474/db/{databaseName}/tx\",\"bolt_direct\":\"bolt://1
+SF:27\.0\.0\.1:7687\",\"neo4j_version\":\"2026\.02\.3\",\"neo4j_edition\":
+SF:\"community\"}")%r(HTTPOptions,B1,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20S
+SF:at,\x2004\x20Apr\x202026\x2022:14:45\x20GMT\r\nAccess-Control-Allow-Ori
+SF:gin:\x20\*\r\nContent-Type:\x20text/plain\r\nAllow:\x20HEAD,GET,OPTIONS
+SF:\r\nContent-Length:\x2018\r\n\r\nHEAD,\x20GET,\x20OPTIONS")%r(RTSPReque
+SF:st,220,"HTTP/1\.1\x20505\x20HTTP\x20Version\x20Not\x20Supported\r\nDate
+SF::\x20Sat,\x2004\x20Apr\x202026\x2022:14:45\x20GMT\r\nCache-Control:\x20
+SF:must-revalidate,no-cache,no-store\r\nContent-Type:\x20text/html;charset
+SF:=iso-8859-1\r\nContent-Length:\x20349\r\n\r\n<html>\n<head>\n<meta\x20h
+SF:ttp-equiv=\"Content-Type\"\x20content=\"text/html;charset=ISO-8859-1\"/
+SF:>\n<title>Error\x20505\x20Unknown\x20Version</title>\n</head>\n<body>\n
+SF:<h2>HTTP\x20ERROR\x20505\x20Unknown\x20Version</h2>\n<table>\n<tr><th>U
+SF:RI:</th><td>/badMessage</td></tr>\n<tr><th>STATUS:</th><td>505</td></tr
+SF:>\n<tr><th>MESSAGE:</th><td>Unknown\x20Version</td></tr>\n</table>\n\n<
+SF:/body>\n</html>\n")%r(RPCCheck,238,"HTTP/1\.1\x20400\x20Bad\x20Request\
+SF:r\nDate:\x20Sat,\x2004\x20Apr\x202026\x2022:14:45\x20GMT\r\nCache-Contr
+SF:ol:\x20must-revalidate,no-cache,no-store\r\nContent-Type:\x20text/html;
+SF:charset=iso-8859-1\r\nContent-Length:\x20388\r\n\r\n<html>\n<head>\n<me
+SF:ta\x20http-equiv=\"Content-Type\"\x20content=\"text/html;charset=ISO-88
+SF:59-1\"/>\n<title>Error\x20400\x20Illegal\x20character\x20OTEXT=0x80</ti
+SF:tle>\n</head>\n<body>\n<h2>HTTP\x20ERROR\x20400\x20Illegal\x20character
+SF:\x20OTEXT=0x80</h2>\n<table>\n<tr><th>URI:</th><td>/badMessage</td></tr
+SF:>\n<tr><th>STATUS:</th><td>400</td></tr>\n<tr><th>MESSAGE:</th><td>Ille
+SF:gal\x20character\x20OTEXT=0x80</td></tr>\n</table>\n\n</body>\n</html>\
+SF:n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port7687-TCP:V=7.98%I=9%D=4/4%Time=69D18D55%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,99,"HTTP/1\.0\x20200\x20OK\r\ncontent-type:\x20application/json
+SF:\r\naccess-control-allow-origin:\x20\*\r\nvary:\x20Accept\r\ndate:\x20S
+SF:at,\x2004\x20Apr\x202026\x2022:14:45\x20GMT\r\ncontent-length:\x200\r\n
+SF:\r\n")%r(FourOhFourRequest,99,"HTTP/1\.0\x20200\x20OK\r\ncontent-type:\
+SF:x20application/json\r\naccess-control-allow-origin:\x20\*\r\nvary:\x20A
+SF:ccept\r\ndate:\x20Sat,\x2004\x20Apr\x202026\x2022:14:45\x20GMT\r\nconte
+SF:nt-length:\x200\r\n\r\n")%r(OfficeScan,99,"HTTP/1\.1\x20200\x20OK\r\nco
+SF:ntent-type:\x20application/json\r\naccess-control-allow-origin:\x20\*\r
+SF:\nvary:\x20Accept\r\ndate:\x20Sat,\x2004\x20Apr\x202026\x2022:14:50\x20
+SF:GMT\r\ncontent-length:\x200\r\n\r\n")%r(apple-iphoto,99,"HTTP/1\.1\x202
+SF:00\x20OK\r\ncontent-type:\x20application/json\r\naccess-control-allow-o
+SF:rigin:\x20\*\r\nvary:\x20Accept\r\ndate:\x20Sat,\x2004\x20Apr\x202026\x
+SF:2022:15:01\x20GMT\r\ncontent-length:\x200\r\n\r\n")%r(metasploit-msgrpc
+SF:,99,"HTTP/1\.0\x20200\x20OK\r\ncontent-type:\x20application/json\r\nacc
+SF:ess-control-allow-origin:\x20\*\r\nvary:\x20Accept\r\ndate:\x20Sat,\x20
+SF:04\x20Apr\x202026\x2022:15:11\x20GMT\r\ncontent-length:\x200\r\n\r\n")%
+SF:r(hazelcast-http,99,"HTTP/1\.0\x20200\x20OK\r\ncontent-type:\x20applica
+SF:tion/json\r\naccess-control-allow-origin:\x20\*\r\nvary:\x20Accept\r\nd
+SF:ate:\x20Sat,\x2004\x20Apr\x202026\x2022:15:11\x20GMT\r\ncontent-length:
+SF:\x200\r\n\r\n")%r(docker,99,"HTTP/1\.1\x20200\x20OK\r\ncontent-type:\x2
+SF:0application/json\r\naccess-control-allow-origin:\x20\*\r\nvary:\x20Acc
+SF:ept\r\ndate:\x20Sat,\x2004\x20Apr\x202026\x2022:15:16\x20GMT\r\ncontent
+SF:-length:\x200\r\n\r\n")%r(LSCP,99,"HTTP/1\.0\x20200\x20OK\r\ncontent-ty
+SF:pe:\x20application/json\r\naccess-control-allow-origin:\x20\*\r\nvary:\
+SF:x20Accept\r\ndate:\x20Sat,\x2004\x20Apr\x202026\x2022:15:16\x20GMT\r\nc
+SF:ontent-length:\x200\r\n\r\n");
+Service Info: OS: Unix
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Apr  4 16:15:27 2026 -- 1 IP address (1 host up) scanned in 52.56 seconds

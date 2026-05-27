@@ -1,0 +1,3 @@
+User: root | UID: 0 | Shell: /usr/bin/zsh
+User: nobody | UID: 65534 | Shell: /usr/sbin/nologin
+User: dan | UID: 1000 | Shell: /usr/bin/zsh

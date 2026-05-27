@@ -1,0 +1,6 @@
+Matching Defaults entries for root on kali:
+    env_reset, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin, use_pty
+
+User root may run the following commands on kali:
+    (ALL : ALL) ALL
+    (ALL) NOPASSWD: /usr/bin/vim

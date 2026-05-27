@@ -1,0 +1,8 @@
+{
+    "timestamp": "2026-04-28 19:32:45.224745",
+    "target": "127.0.0.1",
+    "banner": null,
+    "weaknesses": [
+        "Audit failed: [Errno 111] Connection refused"
+    ]
+}
