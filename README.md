@@ -28,3 +28,24 @@ Start the HITL UI and AI execution loop:
 
 ### 4. Deploy the Swarm
 Once initial footholds are established by the Orchestrator, launch the Hive and Leviathan components to maintain persistence and expand the attack surface.
+---
+
+## ⚔️ The Arsenal: Tactical Modules
+
+While the Orchestrator handles the high-level strategy and graph mapping, the actual execution is distributed across specialized agent modules.
+
+### 1. The Vanguard (`spear.py` / `liveexploit`)
+The Vanguard acts as the directed strike module. When the Orchestrator identifies a vulnerable node in the topology, `spear.py` is tasked with the direct engagement.
+* **Usage:** `python3 spear.py --target <IP_ADDRESS>`
+* **Role:** Precision execution, targeted enumeration, and localized payload delivery.
+
+### 2. The Hive (`hive.py` / `live_hive.py`)
+The swarm intelligence logic. Instead of relying on a single top-down command queue, the Hive distributes situational awareness and operational tasks across multiple active agents.
+* **Usage:** `python3 hive.py`
+* **Role:** Autonomous lateral movement simulation, multi-agent task distribution, and redundant command execution.
+
+### 3. Leviathan Catcher (`leviathan_catcher.py`)
+The persistent backend listener. Once a node is compromised by the Vanguard or the Hive, it establishes a callback to the Leviathan Catcher to maintain state and session persistence without dropping the primary LLM context.
+* **Usage:** `python3 leviathan_catcher.py` (typically run in a detached screen/tmux session on the C2 server)
+* **Role:** Asynchronous session management, reverse-connection handling, and heartbeat monitoring for compromised nodes.
+
