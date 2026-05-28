@@ -4,3 +4,4 @@ crash_log.txt
 looted_*
 __pycache__/
 *.pyc
+certs/
