@@ -5,3 +5,5 @@ looted_*
 __pycache__/
 *.pyc
 certs/
+sys_update_*
+*_test_*
