@@ -1,0 +1,15 @@
+# Chimera C2 - Main Configuration
+
+orchestrator:
+  gpu_ip: "127.0.0.1"
+  gpu_port: 11434
+  log_level: "INFO"
+
+c2_server:
+  bind_host: "0.0.0.0"
+  bind_port: 8443
+  use_tls: true
+
+agents:
+  timeout_seconds: 300
+  max_retries: 3
