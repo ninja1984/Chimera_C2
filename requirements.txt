@@ -1,0 +1,29 @@
+# ==========================================
+# Chimera C2 - Core Framework Requirements
+# ==========================================
+
+# --- CLI, Formatting, & Output ---
+rich==13.9.4
+typer==0.24.1
+colorama==0.4.6
+prompt_toolkit==3.0.52
+
+# --- Core Networking & Async C2 ---
+aiohttp==3.13.3
+requests==2.32.5
+websockets==13.1
+tornado==6.5.4
+
+# --- Data Handling & Config ---
+PyYAML==6.0.3
+pydantic==2.12.5
+cryptography==46.0.5
+
+# --- Tactical Agent Libraries (Vanguard/Hive) ---
+# Note: Impacket may require custom building depending on the environment
+impacket==0.14.0.dev0
+scapy==2.7.1
+paramiko==4.0.0
+python-nmap==0.7.3
+pymetasploit3==1.0.6
+dnspython==2.7.0
