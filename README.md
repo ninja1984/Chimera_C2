@@ -10,7 +10,7 @@ What's Actually Here
 
 This is a research project developed over 3 months of focused work. The framework currently implements:
 
-98+ Specialized Offensive Agents (rapidly expanding)
+98 Specialized Offensive Agents (rapidly expanding)
 
 Built from scratch with modular design. Each agent focuses on a specific red team task — from kernel diagnostics to advanced exfiltration.
 
@@ -22,11 +22,11 @@ The "AI integration" mentioned in earlier versions refers to experimental LLM-as
 Project Structure
 
 Chimera_C2/
-├── Agents/              # Core agent implementations
+├── Agents/              # 98 agent implementations
 ├── Tier2_C_Agents/      # Secondary agent tier
 ├── Database/            # SQLite schemas and handlers
 ├── Modules/             # Task modules and communication handlers
-└── config/              # Environment configuration
+└── config/               # Environment configuration
 
 Current State
 
