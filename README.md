@@ -1,51 +1,57 @@
-# Chimera C2 Framework
+Chimera_C2 Framework
 
-A from-scratch red team C2 framework built to understand implant development and create signature-free tooling.
+A from-scratch C2 framework built to understand offensive security tooling internals. No copy-paste - every component written manually to learn how these systems actually work.
+Why I Built This
 
-## Purpose
+Transitioning from IT support to offensive security, I wanted to understand these tools from the inside out. Instead of running other people's exploits, I set out to rebuild core C2 functionality myself - learning how command & control systems manage agents, obfuscate traffic, and maintain persistence.
 
-Deep-dive learning project into C2 architecture, from kernel-level agents to AI-orchestrated command and control. Built to understand how modern adversarial platforms work at every layer rather than relying on existing (heavily signatured) tools.
+Core learning goal: Build working implementations of C2 concepts with zero reliance on copy-pasted code or obvious signatures. If I can't explain every line, it doesn't go in.
+What's Actually Here
 
-## What This Demonstrates
+This is a research project developed over 3 months of focused work. The framework currently implements:
 
-- Custom C2 infrastructure design (Python orchestrator + C kernel agents)
-- Multi-tier attack chain architecture (recon to exploitation to persistence to exfiltration)
-- AI/LLM integration for autonomous operation reasoning
-- 300+ experimental modules covering offensive security techniques
-- Signature-free tooling approach
+98+ Specialized Offensive Agents (rapidly expanding)
 
-## Repository Structure
+Built from scratch with modular design. Each agent focuses on a specific red team task — from kernel diagnostics to advanced exfiltration.
 
-- Agents: Experimental attack modules (Python/C)
-- Orchestrator: C2 server with AI integration
-- Vanguard: Tactical strike modules
-- Tier2_C_Agents: Kernel-level components (C)
-- config: Environment-based configuration
-- tests: Unit tests (sparse, research focus)
+    Tiered architecture - Separation between control logic and agent execution
+    Modular components - Swappable communication methods and task handlers
+    SQLite backend - Simple data persistence for testing/development
 
-## Quick Start
+The "AI integration" mentioned in earlier versions refers to experimental LLM-assisted script generation and analysis tools - not autonomous decision-making agents. Think Copilot-style assistance, not autonomous orchestration.
+Project Structure
 
-Prerequisites: Python 3.8+, Ollama, Linux environment
+Chimera_C2/
+├── Agents/              # Core agent implementations
+├── Tier2_C_Agents/      # Secondary agent tier
+├── Database/            # SQLite schemas and handlers
+├── Modules/             # Task modules and communication handlers
+└── config/              # Environment configuration
 
-Installation:
-    git clone https://github.com/ninja1984/Chimera_C2.git
-    cd Chimera_C2
-    pip install -r requirements.txt
+Current State
 
-Configuration:
-    cp config/.env.example config/.env
-    Edit config/.env with your lab settings
-    source config/.env
-    python3 Orchestrator/autonomous_orchestrator.py
+This is active development work, not a polished product. The ~15 commits you see represent iterative rebuilding as I learned - many experiments got scrapped when I understood better approaches. What's committed works; what doesn't was deleted, not hidden.
+Technical Details
 
-## Background
+    Language: Python 3.x
+    Database: SQLite (development), PostgreSQL planned
+    Communication: HTTP/HTTPS with basic obfuscation
+    Target platforms: Linux primarily, Windows agents in progress
 
-Self-directed 12-month intensive study in offensive security engineering. Focus on understanding C2 internals rather than using off-the-shelf tools. Experimental codebase, research quality, not production-hardened.
+What I Learned
 
-## Security
+    How C2 frameworks manage agent registration and tasking
+    Practical obfuscation techniques that actually evade basic detection
+    Why most "AI-powered" security tools are just regex with marketing
+    The gap between "works in the lab" and "works in production"
 
-Strictly for authorized security research. Isolated lab environments only.
+Next Steps
 
-## License
+    Staged payload delivery system
+    Proper encryption for C2 traffic
+    Windows agent hardening
+    Detection evasion testing against real EDR
 
-MIT License
+Disclaimer
+
+This is educational/research code for learning offensive security concepts. Not for unauthorized use. The goal is understanding defenses by building what they defend against.
