@@ -1,15 +1,11 @@
-# Chimera C2 - Main Configuration
+c2:
+  host: "${C2_HOST:-127.0.0.1}"
+  port: "${C2_PORT:-9999}"
 
-orchestrator:
-  gpu_ip: "127.0.0.1"
-  gpu_port: 11434
-  log_level: "INFO"
+callback:
+  host: "${CALLBACK_HOST:-10.0.2.15}"
+  port: "${CALLBACK_PORT:-4444}"
 
-c2_server:
-  bind_host: "0.0.0.0"
-  bind_port: 8443
-  use_tls: true
-
-agents:
-  timeout_seconds: 300
-  max_retries: 3
+ai:
+  ollama_host: "${OLLAMA_HOST:-127.0.0.1}"
+  gpu_ip: "${GPU_IP:-127.0.0.1}"

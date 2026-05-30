@@ -40,3 +40,26 @@ Once the Orchestrator identifies a target node, you can trigger tactical modules
 
 This framework is strictly for authorized security auditing and educational purposes. Ensure all network simulations are performed within isolated environments. Never include local credentials, private tokens, or sensitive loot in tracked files. Use the .gitignore file provided to mask sensitive local data.
 
+
+## Configuration
+All IPs use environment variables.
+
+Setup:
+  cp config/.env.example config/.env
+  source config/.env
+
+Variables: C2_HOST, C2_PORT, CALLBACK_HOST, CALLBACK_PORT, GPU_IP
+
+## Configuration Setup
+
+1. Copy environment template:
+   cp config/.env.example config/.env
+
+2. Edit with your lab values:
+   nano config/.env
+
+3. Source before running:
+   source config/.env
+   python3 Orchestrator/autonomous_orchestrator.py
+
+All hardcoded IPs removed - uses environment variables only.
