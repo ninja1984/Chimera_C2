@@ -63,3 +63,17 @@ Variables: C2_HOST, C2_PORT, CALLBACK_HOST, CALLBACK_PORT, GPU_IP
    python3 Orchestrator/autonomous_orchestrator.py
 
 All hardcoded IPs removed - uses environment variables only.
+
+## Configuration Setup
+
+1. Copy environment template:
+   cp config/.env.example config/.env
+
+2. Edit with your lab values:
+   nano config/.env
+
+3. Source before running:
+   source config/.env
+   python3 Orchestrator/autonomous_orchestrator.py
+
+All hardcoded IPs removed - uses environment variables only.
