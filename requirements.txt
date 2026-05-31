@@ -22,7 +22,7 @@ cryptography==46.0.5
 # --- Tactical Agent Libraries (Vanguard/Hive) ---
 # Note: Impacket may require custom building depending on the environment
 impacket==0.13.1
-scapy==2.7.1
+scapy==2.7.0
 paramiko==4.0.0
 python-nmap==0.7.3
 pymetasploit3==1.0.6
