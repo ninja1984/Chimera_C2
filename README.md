@@ -51,7 +51,33 @@ Next Steps
     Proper encryption for C2 traffic
     Windows agent hardening
     Detection evasion testing against real EDR
+## Quick Start — How to Run Chimera C2
+
+### 1. Environment Setup
+
+```bash
+cd /path/to/Chimera_C2
+
+# 1. Create and edit the environment variables
+cp config/.env.example config/.env     # if the example file exists
+# OR create it manually:
+cat > config/.env << EOF
+C2_HOST=127.0.0.1
+C2_PORT=9999
+CALLBACK_HOST=192.168.56.101        # ← CHANGE to your host/VM IP
+CALLBACK_PORT=4444
+GPU_IP=127.0.0.1                    # ← your Ollama/GPU machine IP
+OLLAMA_HOST=127.0.0.1
+EOF
+
+
+cd Orchestrator
+python3 live_orchestrator_backend.py
+cd Orchestrator
+python3 autonomous_orchestrator.py
+
 
 Disclaimer
 
 This is educational/research code for learning offensive security concepts. Not for unauthorized use. The goal is understanding defenses by building what they defend against.
+
