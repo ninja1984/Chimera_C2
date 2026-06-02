@@ -7,3 +7,7 @@ __pycache__/
 certs/
 sys_update_*
 *_test_*
+.env
+config/.env
+.env
+config/.env

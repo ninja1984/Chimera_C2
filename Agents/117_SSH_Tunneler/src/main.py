@@ -1,3 +1,4 @@
+from chimera_config import get_lab_password
 import sys; sys.path.append('/home/dan/Chimera_Project')
 import os
 import sys
@@ -52,7 +53,7 @@ class SSH_Tunneler:
         self.db.heartbeat(self.name)
         # In a real scenario, the Commander would pass these from a successful SSH_Brute finding
         # Example placeholders:
-        # self.create_dynamic_tunnel("10.10.10.5", "dan", "Dan7001524")
+        # self.create_dynamic_tunnel("10.10.10.5", "dan", get_lab_password())
         self.db.close()
 
 if __name__ == "__main__":

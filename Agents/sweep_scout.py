@@ -1,3 +1,4 @@
+from chimera_config import get_lab_password
 import subprocess
 import os
 from neo4j import GraphDatabase
@@ -11,7 +12,7 @@ class SweepScout:
     def __init__(self):
         self.uri = "bolt://127.0.0.1:7687"
         self.user = "neo4j"
-        self.password = "Dan7001524"
+        self.password = get_lab_password()
         self.subnet = "10.0.2." # Lab Subnet
 
     def push_to_graph(self, ip):

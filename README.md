@@ -53,6 +53,16 @@ Next Steps
     Detection evasion testing against real EDR
 ## Quick Start — How to Run Chimera C2
 
+### Recommended LLM Setup (Important)
+Chimera C2 was built and tested with **Ollama** using the following models:
+- `whiterabbitneo`
+- `obliteratus`
+
+These models give the best reasoning and red-team behavior for the multi-agent system.
+
+Make sure Ollama is running with one of these models before starting the orchestrator.
+
+
 ### 1. Environment Setup
 
 ```bash
@@ -76,6 +86,8 @@ python3 live_orchestrator_backend.py
 cd Orchestrator
 python3 autonomous_orchestrator.py
 
+# Lab password used by demo agents (SQL Harvester, SSH Tunneler, Metasploit Bridge, etc.)
+LAB_PASSWORD=change_me_in_.env     # ← Change this to your own secure password
 
 Disclaimer
 

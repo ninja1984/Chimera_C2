@@ -1,3 +1,4 @@
+from chimera_config import get_lab_password
 import sys; sys.path.append('/home/dan/Chimera_Project')
 import os
 import sys
@@ -75,7 +76,7 @@ class Active_Directory_Scout:
         # In a real run, this would be triggered by 'Credential_Stasher' or 'Network_Mapper'
         target_domain = "CORP.LOCAL"
         target_user = "dan.svc" 
-        target_pass = "Dan7001524" # Using your set password as a test
+        target_pass = get_lab_password() # Using your set password as a test
         target_dc = "10.129.6.1"
         
         # Uncomment below to run when you have a live target

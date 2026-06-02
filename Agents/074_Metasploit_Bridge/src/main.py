@@ -1,3 +1,4 @@
+from chimera_config import get_lab_password
 import sys; sys.path.append('/home/dan/Chimera_Project')
 import os
 import sys
@@ -20,9 +21,9 @@ class Metasploit_Bridge:
         logging.basicConfig(filename=log_path, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         self.logger = logging.getLogger(self.name)
 
-        # Connect to MSFRPC (Start with: msfrpcd -P Dan7001524 -S)
+        # Connect to MSFRPC (Start with: msfrpcd -P $LAB_PASSWORD -S)
         try:
-            self.client = MsfRpcClient('Dan7001524', port=55553, ssl=True)
+            self.client = MsfRpcClient(get_lab_password(), port=55553, ssl=True)
             self.logger.info("Successfully connected to Metasploit RPC.")
         except Exception as e:
             self.logger.error(f"Failed to connect to msfrpcd: {e}")
